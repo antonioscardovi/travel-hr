@@ -16,10 +16,13 @@
       <div class="loginbox">
         <img src="avatar.png" class="avatar">
             <h1 style="font-family:Lobster;font-size: 30px">Login Here!</h1>
-            <form>
-                <p>Username</p>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+                <p>{{ form.username.label }}</p>
+                {{ form.username(size=32, class=input) }}
                 <input type="text" name="" placeholder="Enter Username">
-                <p>Password</p>
+                <p>{{ form.password.label }}</p>
+                {{ form.password(size=32) }}    
                 <input type="password" name="" placeholder="Enter Password">
                 <input type="submit" name="" value="Login">
                 
