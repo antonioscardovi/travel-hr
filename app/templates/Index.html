@@ -5,7 +5,11 @@
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Resposive desing</title>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Homepage</title>
+        {% endif %}
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -35,7 +39,6 @@
                             <li><a href="">Clients</a></li>
                             <li><a href="">Our Team</a></li>
                             <li><a href="">Contacts</a></li>
-
                         </ul>
                     </nav>
                 </div>
