@@ -84,7 +84,7 @@ header nav ul li a:hover
 }
 
 .slider span{
-    color: orange;
+    color: darkgreen;
 }
 
 .slider a
@@ -99,18 +99,15 @@ header nav ul li a:hover
     transition: 0.5s ease-in;
 
 }
-.slider a.btn-half:hover
-{
-background-color: dodgerblue;
-}
+
 .slider a.btn-full 
 {
-    background-color: orange; 
+    background-color: rgb(41, 124, 63); 
     color: white;
     transition: 0.5s ease-in;
 }
 .slider a.btn-full:hover{
-    background-color: orangered;
+    background-color: #123A1D;
 }
 
 .img2 {
