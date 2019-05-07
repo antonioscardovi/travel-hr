@@ -33,4 +33,3 @@ class Izlet(db.Model):
         return '<Izlet {}>'.format(self.opis)
 
 
-
