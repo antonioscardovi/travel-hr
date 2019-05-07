@@ -15,3 +15,6 @@ class User(db.Model):
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
+class UserOnIzlet(db.Model):
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    izlet_id = db.Column(db.Integer, db.ForeignKey('izlet.id'))
