@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Register</title>
+    {% endif %}
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="mojcss.css">
 </head>
@@ -15,21 +19,56 @@
       <div class="loginbox zasignup">
         <img src="avatar.png" class="avatar">
             <h1 style="font-family:Lobster;font-size: 30px">Sign up!</h1>
-            <form>
-                <p>Enter your mail</p>
-                <input type="text" name="" placeholder="Enter e-mail"><br>
-                <p>Enter your full name</p>
-                <input type="text" name="" placeholder="E.g. John Doe"><br>
-                <p>Enter username</p>
-                <input type="text" name="" placeholder="Enter username"><br>
-                <p>Enter your password</p>
-                <input type="password" name="" placeholder="Enter password"><br>
-                <p>Repeat your password</p>
-                <input type="password" name="" placeholder="Repeat password"><br>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="forme">
+                    {{ form.username.label(class="label") }}
+                    {{ form.username(size=32, class="input") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="forme">
+                    {{ form.name.label(class="label") }}
+                    {{ form.name(size=32, class="input") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="forme">
+                    {{ form.surname.label(class="label") }}
+                    {{ form.surname(size=32, class="input") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="forme">
+                    {{ form.email.label(class="label") }}
+                    {{ form.email(size=32, class="input") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="forme">
+                    {{ form.password.label(class="label") }}
+                    {{ form.password(size=32, class="input")}}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                <div class="forme">
+                    {{ form.password2.label(class="label") }}
+                    {{ form.password2(size=32, class="input") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
                 
-                <input type="submit" name="" value="Sign up!">
                 
-                <a href="login.html"><center>Log in!</center></a>
+                {{ form.submit() }}
+                
+                <a href="{{ url_for('login') }}"><center>Log in!</center></a>
                 
                 
             </form>
