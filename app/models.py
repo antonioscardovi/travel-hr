@@ -18,7 +18,7 @@ class User(db.Model):
 
 
 class Izlet(db.Model):
-    id_izlet = db.Column(db.integer, primary_key=True)
+    id_izlet = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     naziv = db.Column(db.String(128), nullable=False)
     destinacija = db.Column(db.String(64), nullable=False)
@@ -31,5 +31,4 @@ class Izlet(db.Model):
 
     def __repr__(self):
         return '<Izlet {}>'.format(self.opis)
-
 
