@@ -42,14 +42,14 @@
                             <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
                             <li><a href="#feature">Contacts</a></li>
                             <li><a href="#team">About Us</a></li>
-                            <li><li><div class="dropdown">
+                            <li><div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
                                   <li><a href="">Profile</a></li>
                                   <li><a href="{{ url_for('logout') }}">Logout</a></li>
                                 </ul>
-                              </div> </li>
+                            </div>
                         
                               <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
                             </li>
