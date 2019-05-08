@@ -1,7 +1,8 @@
-from app import db
+from app import db, login
 from datetime import datetime
+from flask_login import UserMixin
 
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), index=True)
     surname = db.Column(db.String(64), index=True)
@@ -32,3 +33,6 @@ class Izlet(db.Model):
     def __repr__(self):
         return '<Izlet {}>'.format(self.opis)
 
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
