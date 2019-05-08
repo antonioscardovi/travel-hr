@@ -50,20 +50,17 @@ def register():
 @login_required
 def izleti():
     form = IzletiForm()
-    if current_user.is_authenticated:
-        return render_template('izleti.html', title="Izleti", form=form)
     if current_user.is_authenticated == False:
         return redirect(url_for('login'))
     if form.validate_on_submit():
         izlet = Izlet(naziv=form.name.data, destinacija=form.location.data, cijena=form.price.data, 
-        dolazak=form.end.data, polazak=form.start.data, image_file=form.picture.data, 
-        date_posted=form.datum.data, opis=form.description.data)
+        dolazak=form.end.data, polazak=form.start.data, opis=form.description.data, user_id=current_user.id)
         db.session.add(izlet)
         db.session.commit()
         flash('Congratulations, you posted a trip!')
         print('Congratulations!')
         return redirect(url_for('homepage'))
-    return render_template('homepage.html', title='Homepage')
+    return render_template('izleti.html', title='Add Trips', form=form)
 
 
 @app.route('/homepage')
