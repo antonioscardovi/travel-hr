@@ -70,3 +70,11 @@ def izleti():
 @login_required
 def homepage():
     return render_template('homepage.html', title='Homepage')
+
+
+@app.route('/profile/<username>')
+@login_required
+def user(username):
+    user = User.query.filter_by(username=username).first_or_404()
+    
+    return render_template('profile.html', user=user)
