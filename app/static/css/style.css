@@ -18,6 +18,9 @@ header
     z-index: 1;
     width: 100%;
 }
+
+
+
 .secondary
 {
     background-color: #262626;
@@ -58,11 +61,15 @@ color:white;
 transition: all 0.5s ease-in;
 }
 
+
+
 header nav ul li a:hover
 {
     text-decoration: none;
    
-    color: rgb(41, 124, 63);  
+    color:rgb(92, 218, 125);
+    
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .img1 
@@ -199,6 +206,7 @@ slider i
     margin: 50px 0px 0px;
     text-align: center;
     padding: 70px 25px 40px;
+ 
 
 }
 
