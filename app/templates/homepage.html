@@ -37,11 +37,11 @@
                     <a href="" class="logo"><img src="/static/airplane.png"></a>
                     <nav>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Trips</a></li>
+                            <li><a href="#slider-carousel">Home</a></li>
+                            <li><a href="#intro">Trips</a></li>
                             <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
-                            <li><a href="">Contacts</a></li>
-                            <li><a href="">About Us</a></li>
+                            <li><a href="#feature">Contacts</a></li>
+                            <li><a href="#team">About Us</a></li>
                             <li><li><div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
                                 <span class="caret"></span></button>
@@ -139,6 +139,9 @@
 
                             
                 </div>
+
+                <a href=""><center>Show All</center></a>
+
             </div>
 
         </section>
