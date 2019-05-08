@@ -38,10 +38,22 @@
                     <nav>
                         <ul>
                             <li><a href="">Home</a></li>
-                            <li><a href="">Popular</a></li>
+                            <li><a href="">Trips</a></li>
+                            <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
                             <li><a href="">Contacts</a></li>
                             <li><a href="">About Us</a></li>
-                            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            <li><li><div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#">Profile</a></li>
+                                  <li><a href="#">Logout</a></li>
+                                </ul>
+                              </div> </li>
+                        
+                              <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
+                            </li>
+                            
                         </ul>
                     </nav>
                 </div>

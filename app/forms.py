@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, Form, TextField, TextAreaField, validators 
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms.fields.html5 import DateField
 from app.models import User
 from flask_wtf.file import FileField, FileRequired
 
@@ -35,8 +36,9 @@ class RegistrationForm(FlaskForm):
 class IzletiForm(FlaskForm):
     name = StringField('Ime Izleta', validators=[DataRequired()])
     location = StringField('Destinacija', validators=[DataRequired()])
-    start = StringField('Datum Početka Izleta', validators=[DataRequired()])
-    end = StringField('Kraj izleta', validators=[DataRequired()])
+    start = DateField('Datum Početka Izleta', format='%Y-%m-%d', validators=[DataRequired()])
+    end = DateField('Kraj izleta', format='%Y-%m-%d', validators=[DataRequired()])
     description = TextAreaField('Opis Izleta', validators=[DataRequired()])
     price = StringField('Cijena', validators=[DataRequired()])
     picture = FileField('Fotografija', validators=[FileRequired()])
+    submit = SubmitField('Submit')
