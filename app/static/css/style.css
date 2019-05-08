@@ -20,7 +20,7 @@ header
 }
 .secondary
 {
-    background-color:rgba(0,0,0,0.9);
+    background-color:rgba(70, 10, 10, 0.9);
     
     box-shadow: 0px 0px 17px 0px;
     transition: all 1s ease-in;
@@ -545,4 +545,14 @@ slider i
     color: deepskyblue;
     font-size: 20px;
     font-weight: 700;
+}
+
+
+footer{
+	padding:20px;
+	margin-top: 20px;
+	color: #ffffff;
+	background-color: #e8491d;
+	text-align: center;
+
 }
