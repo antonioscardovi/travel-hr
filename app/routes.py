@@ -1,6 +1,7 @@
 from flask import render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
+from werkzeug.utils import secure_filename
 from app import app, db
 from app.forms import LoginForm
 from app.forms import RegistrationForm
@@ -48,6 +49,24 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/izleti', methods=['GET', 'POST'])
+@login_required
+def izleti():
+    if current_user.is_authenticated:
+        return redirect(url_for('izleti'))
+    form = IzletiForm()
+    if form.validate_on_submit():
+        izlet = Izlet(naziv=form.name.data, destinacija=form.location.data, cijena=form.price.data, 
+        dolazak=form.end.data, polazak=form.start.data, image_file=form.picture.data, 
+        date_posted=form.datum.data, opis=form.description.data)
+        db.session.add(izlet)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        print('Congratulations!')
+        return redirect(url_for('homepage'))
+    return render_template('homepage.html', title='Homepage')
+
 
 
 @app.route('/homepage')
