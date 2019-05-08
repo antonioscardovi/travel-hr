@@ -14,6 +14,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <link rel="stylesheet" href="../static/css/style.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -29,15 +32,15 @@
     <body>
 
         <header>
-            <div class="container">
+            <div class="container" onclick="myFunction(this)"> 
                 <div class="row">
-                    <a href="" class="logo"><img src="/static/airplane.png"></a>
+                    <a href="" class="logo"><img src="../static/airplane.png"></a>
                     <nav>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Popular</a></li>
-                            <li><a href="">Contacts</a></li>
-                            <li><a href="">About Us</a></li>
+                            <li><a href="">Home</a></li> 
+                            <li><a href="">Popular</a></li> 
+                             <li><a href="">Contacts</a></li> 
+                             <li><a href="">About Us</a></li> 
                         </ul>
                     </nav>
                 </div>
@@ -57,7 +60,7 @@
                        Join us now!
                        we offer great trips,<br> awesome advantures, good times as well as great prices and many more... 
                    </p><br>
-                   <a href="" class="btn btn-full">Get Started</a>
+                   <a href="{{ url_for('login') }}" class="btn btn-full">Sign In</a>
         </section>
      
 
@@ -67,7 +70,7 @@
                     <div class="col-sm-12 text-center">
                         <h2 style="font-family:lobster; font-size:50px;">Popular <span>Places</span></h2> 
                         <div class="sub-heading">
-                            <p>
+                            <p style="font-size: 16px;">
                                <br> Here you can see some of our latest trips.<br>    
                                  By clicking on picture you’ll be redirected on trip site where you can join trip with other participants.
 
@@ -77,9 +80,10 @@
                 </div>
 
                 <div class="row">
-                   
+                        
                          <div class="col-sm-4">
-                                <div class="intro-block">
+
+                                <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
                                    <img src="/static/zdr1.jpg">
                                    <i class="fa fa-star"></i></span>
                                    <i class="fa fa-star"></i></span>
@@ -91,10 +95,10 @@
                                    </p>
                                 </div>
                             </div>
-
+                        
                             
                          <div class="col-sm-4">
-                            <div class="intro-block">
+                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
                                <img src="/static/zdr1.jpg">
                                <i class="fa fa-star"></i></span>
                                <i class="fa fa-star"></i></span>
@@ -109,8 +113,8 @@
 
                         
                         <div class="col-sm-4">
-                            <div class="intro-block">
-                               <img src="/static/zdr1.jpg">
+                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
+                                <img src="/static/zdr1.jpg">
                                <i class="fa fa-star"></i></span>
                                <i class="fa fa-star"></i></span>
                                <i class="fa fa-star"></i></span>
@@ -142,212 +146,50 @@
                                             </p>
                                         </div>
                         </div>
-                    </div>
+                     </div>
 
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-lg-8 text-center">
-                        <div class="feature-block">
-                            <div class="single-feature feature-circle">
-                                <div class="circle"></div>
-                                <span class="featured-icon"><i class="fa fa-car"></i></span>
-                                <h3>Custom Scrollbars</h3>
-                                <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetings<br>
-                                        industry.Lorem Ipsum hes been idustry's standard dummy
-                                </p>
-                            </div>
+                  </div>
 
-                            <div class="single-feature feature-circle">
-                                <div class="circle"></div>
-                                <span class="featured-icon"><i class="fa fa-car"></i></span>
-                                <h3>Custom Scrollbars</h3>
-                                <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetings<br>
-                                        industry.Lorem Ipsum hes been idustry's standard dummy
-                                </p>
-                            </div>
-                            <div class="single-feature feature-circle">
-                                <div class="circle"></div>
-                                <span class="featured-icon"><i class="fa fa-car"></i></span>
-                                <h3>Custom Scrollbars</h3>
-                                <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetings<br>
-                                        industry.Lorem Ipsum hes been idustry's standard dummy
-                                </p>
-                            </div>
-                            <div class="single-feature feature-circle">
-                                <div class="circle"></div>
-                                <span class="featured-icon"><i class="fa fa-car"></i></span>
-                                <h3>Custom Scrollbars</h3>
-                                <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetings<br>
-                                        industry.Lorem Ipsum hes been idustry's standard dummy
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm.4 col-lg-4">
-                        <div class="feature-mockup">
-                            <img src="/static/Mapa za wiki-01.png" class="img-responsive">
-                        </div>
-                    </div>
+
+                  <!--Form Table-->
+                  <div class="container2">
+                    <form action="action_page.php">
+                  
+                      <label for="fname">First Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                  
+                      <label for="lname">Last Name</label>
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                  
+                      <label for="country">Country</label>
+                      <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                      </select>
+                  
+                      <label for="subject">Subject</label>
+                      <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px"></textarea>
+                  
+                      <input type="submit" value="Submit">
+                  
+                    </form>
+                  </div>
+                 
+                   
                 </div>
-            </div>
+           
         </section>
 
-        <section class="more-feature-area" id="more_feature">
-            <div class="container">
-                <div class="row">
-                   <div class="col-sm-12 text-center">
-                       <div class="title">
-                          <h2>Work Feature</h2>
-                             <div class="sub-heading">
-                                 <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings<br>
-                                          industry.Lorem Ipsum hes been idustry's standard dummy
-                            
-                                 </p>
-                             </div>
-                         </div>
-                      </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-7">
-                        <img src="/static/Mapa za wiki-01.png" class="img-responsive">
-                    </div>
-                    <div class="col-sm-12 col-md-5">
-                        <div class="feature-list">
-                            <ul>
-                                <li>
-                                    <div class="feature-icon">
-                                        <i class="fa fa-arrows-alt"></i>
-                                    </div>
-                                    <div class="feature-details">
-                                        <h3>
-                                            Retina Display
-                                        </h3>
-                                        <p>
-                                                .more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2
-                                        </p>
-                                    </div>
-                                </li>
+    
 
-                                <li>
-                                        <div class="feature-icon">
-                                            <i class="fa fa-cog"></i>
-                                        </div>
-                                        <div class="feature-details">
-                                            <h3>
-                                               Beautifuly Callbacks
-                                            </h3>
-                                            <p>
-                                                    .more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2
-                                            </p>
-                                        </div>
-                                 </li>
-
-                                 <li>
-                                        <div class="feature-icon">
-                                            <i class="fa fa-undo"></i>
-                                        </div>
-                                        <div class="feature-details">
-                                            <h3>
-                                               Auto redirect
-                                            </h3>
-                                            <p>
-                                                    .more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2
-                                            </p>
-                                        </div>
-                                 </li>
-
-                                 <li>
-                                        <div class="feature-icon">
-                                            <i class="fa fa-undo"></i>
-                                        </div>
-                                        <div class="feature-details">
-                                            <h3>
-                                               Auto redirect
-                                            </h3>
-                                            <p>
-                                                    .more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2.more-feature-area .title h2
-                                            </p>
-                                        </div>
-                                 </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials" id="testimonial">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <h2>Awesome Clients</h2>
-                        <div class="sub-heading">
-                            <p>
-                                This are our best clienets who used our app and traveled along with us
-
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-testimonials" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-testimonials" data-slide-to="1"></li>
-                                <li data-target="#carousel-testimonials" data-slide-to="2"></li>
-
-                            </ol>
-
-                            <div class="carousel-inner">
-                                <div class="item active text-center">
-                                    <img src="/static/Mapa za wiki-01.png" class="center-block">
-                                    <h2>Daniel Grover</h2>
-                                    <h4>Sr Engineer</h4>
-                                    <p>
-                                        We Work Work Work.We Travel lelele elle ele lel                                       
-                                        We Work Work Work.We Travel lelele elle ele lel
-                                    </p>
-                                </div>
-                                <div class="item text-center">
-                                        <img src="/static/Mapa za wiki-01.png" class="center-block">
-                                        <h2>Daniel Grover</h2>
-                                        <h4>Sr Engineer</h4>
-                                        <p>
-                                            We Work Work Work.We Travel lelele elle ele lel                                       
-                                            We Work Work Work.We Travel lelele elle ele lel
-                                            We Work Work Work.We Travel lelele elle ele lel
-                                        </p>
-                                 </div>
-                                    
-                                 <div class="item text-center">
-                                            <img src="/static/Mapa za wiki-01.png" class="center-block">
-                                            <h2>Daniel Grover</h2>
-                                            <h4>Sr Engineer</h4>
-                                            <p>
-                                                We Work Work Work.We Travel lelele elle ele lel                                         
-                                                We Work Work Work.We Travel lelele elle ele lel
-                                                We Work Work Work.We Travel lelele elle ele lel
-                                            </p>
-                                 </div>        
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
 
         <section class="team-area" id="team">
             <div class="container">
                 <div class="row">
                      <div class="col-sm-12 text-center">
-                         <h2>Our Team</h2>
+                        <h2 style="font-family:lobster; font-size:50px; color: rgb(41, 124, 63);">About <span>Us</span></h2>
                              <div class="sub-heading">
                                     <p>
                                         This are our best clienets who used our app and traveled along with us
@@ -356,7 +198,7 @@
                      </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-2.4">
                         <div class="team-man">
                             <img src="/static/default3.jpg">
                         </div>
@@ -366,9 +208,7 @@
                                 <span>Project Menager</span>
                             </div>
                             <p>
-                             This are our best clienets who used our app and traveled along with us
-                             This are our best clienets who used our app and traveled along with us
-                             This are our best clienets who used our app and traveled along with us
+                             This are our best clienets who used
                             </p>
                             <div class="team-social-network">
                                 <a href=""><i class="fa fa-facebook"></i></a>
@@ -379,7 +219,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-2.4">
                             <div class="team-man">
                                 <img src="/static/default3.jpg">
                             </div>
@@ -389,9 +229,7 @@
                                     <span>Project Menager</span>
                                 </div>
                                 <p>
-                                 This are our best clienets who used our app and traveled along with us
-                                 This are our best clienets who used our app and traveled along with us
-                                 This are our best clienets who used our app and traveled along with us
+                                 This are our best clienets who used 
                                 </p>
                                 <div class="team-social-network">
                                     <a href=""><i class="fa fa-facebook"></i></a>
@@ -402,7 +240,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-sm-6 col-md-3">
+                        <div class="col-sm-6 col-md-2.4">
                                 <div class="team-man">
                                     <img src="/static/default3.jpg">
                                 </div>
@@ -412,9 +250,7 @@
                                         <span>Project Menager</span>
                                     </div>
                                     <p>
-                                     This are our best clienets who used our app and traveled along with us
-                                     This are our best clienets who used our app and traveled along with us
-                                     This are our best clienets who used our app and traveled along with us
+                                     This are our best clienets who used
                                     </p>
                                     <div class="team-social-network">
                                         <a href=""><i class="fa fa-facebook"></i></a>
@@ -425,7 +261,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-md-3">
+                            <div class="col-sm-6 col-md-2.4">
                                     <div class="team-man">
                                         <img src="/static/default3.jpg">
                                     </div>
@@ -435,9 +271,7 @@
                                             <span>Project Menager</span>
                                         </div>
                                         <p>
-                                         This are our best clienets who used our app and traveled along with us
-                                         This are our best clienets who used our app and traveled along with us
-                                         This are our best clienets who used our app and traveled along with us
+                                         This are our best clienets who used
                                         </p>
                                         <div class="team-social-network">
                                             <a href=""><i class="fa fa-facebook"></i></a>
@@ -447,10 +281,27 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+                               
+
+
+                                
                 </div>
             </div>
         </section>
 
+        <footer>
+            <p>Travel-Hr Desing,Copyright &copy; 2019</p>
+            <!-- Add font awesome icons -->
+            <p>Follow Us!</p>
+            <img src="static/logofb.png">     
+            <img src="static/logoig.png"> 
+            <img src="static/logofb.png">     
+            <img src="static/logoig.png">       
+
+        </footer>
         <script src="static/main.js" type="text/javascript"></script>
+        
     </body>
 </html>

@@ -18,10 +18,13 @@ header
     z-index: 1;
     width: 100%;
 }
+
+
+
 .secondary
 {
-    background-color:rgba(0,0,0,0.9);
-    
+    background-color: #262626;
+    opacity: 0.9;
     box-shadow: 0px 0px 17px 0px;
     transition: all 1s ease-in;
 }
@@ -58,11 +61,15 @@ color:white;
 transition: all 0.5s ease-in;
 }
 
+
+
 header nav ul li a:hover
 {
     text-decoration: none;
    
-    color: rgb(41, 124, 63);  
+    color:rgb(92, 218, 125);
+    
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .img1 
@@ -199,8 +206,11 @@ slider i
     margin: 50px 0px 0px;
     text-align: center;
     padding: 70px 25px 40px;
+ 
 
 }
+
+
 
 .intro-block img
 {
@@ -257,7 +267,7 @@ slider i
 .intro-block h3
 {
     font-size: 18px;
-    color: deepskyblue;
+    color:  rgb(41, 124, 63);
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -275,7 +285,7 @@ slider i
 
 .feature-area
 {
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0.3)), url(/static/default1.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0.3)), url(/static/travelmap.jpg);
     background-position: center;
     background-size: 100% 100%;
     background-attachment: fixed;
@@ -309,6 +319,45 @@ slider i
     -ms-transition: 0.3s ease-in;
 
 }
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+ .feature-area .container .container2 {
+     margin-left: 20%;
+     margin-right: 20%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+
+
 
 .feature-block:after
 {
@@ -510,6 +559,9 @@ slider i
     padding: 100px 0px;
 }
 
+.team-area .container .row .col-sm-12 h2 span{
+    color: rgba(8, 8, 8, 0.777);
+}
 .team-area .sub-heading
 {
     margin-bottom: 100px;
@@ -546,3 +598,50 @@ slider i
     font-size: 20px;
     font-weight: 700;
 }
+
+
+footer{
+	padding:20px;
+	margin-top: 20px;
+	color: #ffffff;
+	background-color: rgba(70, 10, 10, 0.9);
+	text-align: center;
+
+}
+
+
+/* Style all font awesome icons */
+footer .fa {
+    padding: right;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  footer .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  footer .fa-facebook {
+    background: darkgray;
+    color: white;
+  }
+  
+  /* Twitter */
+ footer .fa-twitter {
+    background: darkgray;
+    color: white;
+  }
+
+  footer .fa-instagram
+  {
+      background: darkgray;
+      color: white;
+  }
+
+ 

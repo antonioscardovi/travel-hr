@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Trips</title>
+    {% endif %}
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/mojcss.css">
+</head>
+<body>
+    <div class="izletibox">
+        <h1>Add new trip</h1>
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+
+        <div class="forme">
+        {{ form.name.label(class="label") }}
+        {{ form.name(size=32, class="input", placeholder="Trip name") }}
+        {% for error in form.name.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+        </div>
+
+        <div class="forme">
+            {{ form.location.label(class="label") }}
+            {{ form.location(size=32, class="input", placeholder="Trip location") }}
+            {% for error in form.location.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+        </div>
+
+        <div class="forme">
+            {{ form.start.label(class="label") }}
+            {{ form.start(class="input") }}
+        </div>
+        
+        <div class="forme">
+            {{ form.end.label(class="label") }}
+            {{ form.end(class="input") }}
+        </div>
+
+        <div class="forme">
+            {{ form.description.label(class="label") }}
+            {{ form.description(class="input") }}
+        </div>
+
+        <div class="forme">
+            {{ form.price.label(class="label") }}
+            {{ form.price(class="input") }}
+        </div>
+
+        <div class="forme">
+            {{ form.picture.label(class="label") }}
+            {{ form.picture(class="input") }}
+        </div>
+
+        {{ form.submit() }}
+
+    </form>
+    </div>
+</body>
+</html>
