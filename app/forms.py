@@ -40,5 +40,5 @@ class IzletiForm(FlaskForm):
     end = DateField('Kraj izleta', format='%Y-%m-%d', validators=[DataRequired()])
     description = TextAreaField('Opis Izleta', validators=[DataRequired()])
     price = StringField('Cijena', validators=[DataRequired()])
-    picture = FileField('Fotografija', validators=[FileRequired()])
+    # picture = FileField('Fotografija', validators=[FileRequired()])
     submit = SubmitField('Submit')
