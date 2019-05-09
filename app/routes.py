@@ -1,3 +1,5 @@
+import secrets
+import os
 from flask import render_template, redirect, url_for, flash, request
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
@@ -46,6 +48,18 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
+
+# funkcija za slike:
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/izlet_pics', picture_fn)
+    form_picture.save(picture_path)
+    return picture_fn
+
+
+
 @app.route('/izleti', methods=['GET', 'POST'])
 @login_required
 def izleti():
@@ -53,6 +67,9 @@ def izleti():
     if current_user.is_authenticated == False:
         return redirect(url_for('login'))
     if form.validate_on_submit():
+        if form.picture.data:
+            picture_file = save_picture(form.picture.data)
+            
         izlet = Izlet(naziv=form.name.data, destinacija=form.location.data, cijena=form.price.data, 
         dolazak=form.end.data, polazak=form.start.data, opis=form.description.data, user_id=current_user.id)
         db.session.add(izlet)
@@ -76,6 +93,10 @@ def profile(username):
     form = EditProfileForm()
     return render_template('profile.html', form=form, user=user)
 
+
+@app.route('/trips')
+def trips():
+    return render_template('trips.html')
 
 # @app.route('/upload', methods='POST')
 # def upload():

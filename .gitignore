@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+﻿# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -130,4 +130,11 @@ dmypy.json
 .vscode/
 
 #database
+.db
+app.db
+/db/
 *.db
+
+#slike
+profile_pics/
+izlet_pics/
