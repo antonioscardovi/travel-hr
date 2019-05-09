@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, Form,
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from wtforms.fields.html5 import DateField
 from app.models import User
-from flask_wtf.file import FileField, FileRequired
+from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
@@ -40,5 +40,5 @@ class IzletiForm(FlaskForm):
     end = DateField('Kraj izleta', format='%Y-%m-%d', validators=[DataRequired()])
     description = TextAreaField('Opis Izleta', validators=[DataRequired()])
     price = StringField('Cijena', validators=[DataRequired()])
-    # picture = FileField('Fotografija', validators=[FileRequired()])
+    picture = FileField('Add Picture', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Submit')
