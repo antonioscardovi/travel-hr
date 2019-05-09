@@ -40,7 +40,7 @@ class IzletiForm(FlaskForm):
     end = DateField('End', format='%Y-%m-%d', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
     price = StringField('Price', validators=[DataRequired()])
-    # picture = FileField('Fotografija', validators=[FileRequired()])
+    picture = FileField('Fotografija', validators=[FileRequired()])
     submit = SubmitField('Submit')
 
 

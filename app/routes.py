@@ -71,7 +71,14 @@ def homepage():
 
 @app.route('/profile/<username>')
 @login_required
-def user(username):
+def profile(username):
     user = User.query.filter_by(username=username).first_or_404()
     form = EditProfileForm()
     return render_template('profile.html', form=form, user=user)
+
+
+# @app.route('/upload', methods='POST')
+# def upload():
+#     picture = request.files['Fotografija']
+
+#     return picture.filename
