@@ -9,15 +9,14 @@
     <title>Add Trip</title>
     {% endif %}
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
+        <link rel="stylesheet" href="/static/css/Profile.css">
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="../static/css/Profile.css">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/app/static/css/style.css">
 
         <!-- jQuery library -->
       
@@ -26,9 +25,42 @@
         <!-- Latest compiled JavaScript -->
         <script src="/static/caroufredsel.js"type="text/JavaScript"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src='main.js'></script>
+
+
+
+      
+    <script src='/static/main.js'></script>
 </head>
 <body>
+
+        <header>
+                <div class="container">
+                    <div class="row">
+                        <a href="" class="logo"><img src="/static/airplane.png"></a>
+                        <nav>
+                            <ul>
+                                <li><a href="#slider-carousel">Home</a></li>
+                                <li><a href="#intro">Trips</a></li>
+                                <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
+                                <li><a href="#feature">Contacts</a></li>
+                                <li><a href="#team">About Us</a></li>
+                                <li><div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                                    <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
+                                      <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                                    </ul>
+                                </div>
+                            
+                                  <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
+                                </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
     
       <div class="profilebox">
 
@@ -42,6 +74,7 @@
 
             <!-- SVI NJEGOVI TRIPOVI -->
 
+            <div class="form-popup" id="myForm">
             <h1 style="font-family:Lobster;font-size: 30px">Edit Profile</h1>
             <form action="" method="post" novalidate>
                 {{ form.hidden_tag() }}
@@ -55,9 +88,22 @@
                 </div>
                 
                 {{ form.submit() }}
+            </div>
                 
             </form>
             
         </div>
+
+        <footer>
+                <p>Travel-Hr Desing,Copyright &copy; 2019</p>
+                <!-- Add font awesome icons -->
+                <p>Follow Us!</p>
+                <img src="static/logofb.png">     
+                <img src="static/logoig.png"> 
+                <img src="static/logofb.png">     
+                <img src="static/logoig.png">       
+    
+            </footer>
+
 </body>
 </html>
