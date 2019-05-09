@@ -215,17 +215,24 @@ slider i
 }
 
 .intro-block
-{
+{   
+    
     position: relative;
     background-color: #f7f7f7;
     margin: 50px 0px 0px;
     text-align: center;
     padding: 70px 25px 40px;
+    opacity: 0.9;
  
 
 }
 
-
+.intro-block .slike
+{
+    
+    width: 243.328px;
+    height: 162.734px;
+}
 
 .intro-block img
 {
@@ -711,6 +718,38 @@ footer{
 }
 
 
+/* Ovo je show more button za trips */
+.intro-area .container .button
+{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #555;
+    text-align: center;
+    cursor: pointer;
+    width: 31.6%;
+}
+
+.intro-area .container .button3
+{
+    
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(41, 124, 63);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.intro-area .container .button3:hover
+{
+    background-color: brown;
+}
 
 
 /* Style all font awesome icons */
