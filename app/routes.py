@@ -94,6 +94,10 @@ def profile(username):
     return render_template('profile.html', form=form, user=user)
 
 
+@app.route('/trips')
+def trips():
+    return render_template('trips.html')
+
 # @app.route('/upload', methods='POST')
 # def upload():
 #     picture = request.files['Fotografija']
