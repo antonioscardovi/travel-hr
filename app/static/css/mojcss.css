@@ -71,6 +71,14 @@
     left: calc(50% - 40px);
 }
 
+.error 
+{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+
 h1{
     margin: 0;
     padding: 0 0 20px;
