@@ -81,8 +81,9 @@ def profile(username):
 def trips():
     return render_template('trips.html')
 
-# @app.route('/upload', methods='POST')
-# def upload():
-#     picture = request.files['Fotografija']
 
-#     return picture.filename
+@app.route('/upload', methods='POST')
+def upload():
+    picture = request.files['Fotografija']
+
+    return picture.filename

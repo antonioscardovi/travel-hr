@@ -34,14 +34,14 @@ class RegistrationForm(FlaskForm):
 
 
 class IzletiForm(FlaskForm):
-    name = StringField('Trip Name', validators=[DataRequired()])
-    location = StringField('Destination', validators=[DataRequired()])
-    start = DateField('Departure', format='%Y-%m-%d', validators=[DataRequired()])
-    end = DateField('End', format='%Y-%m-%d', validators=[DataRequired()])
-    description = TextAreaField('Description', validators=[DataRequired()])
-    price = StringField('Price', validators=[DataRequired()])
-    picture = FileField('Fotografija', validators=[FileRequired()])
-    submit = SubmitField('Submit')
+    name = StringField('Trip Name:', validators=[DataRequired()])
+    location = StringField('Destination:', validators=[DataRequired()])
+    start = DateField('Departure:', format='%Y-%m-%d', validators=[DataRequired()])
+    end = DateField('End:', format='%Y-%m-%d', validators=[DataRequired()])
+    description = TextAreaField('Description:', validators=[DataRequired()])
+    price = StringField('Price:', validators=[DataRequired()])
+    picture = FileField('Add Picture', validators=[FileRequired()])
+    submit = SubmitField('Add Trip')
 
 
 class EditProfileForm(FlaskForm):
