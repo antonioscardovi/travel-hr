@@ -1,23 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if title %}
-    <title>{{ title }} - Home</title>
-    {% else %}
-    <title>Welcome to Travel.hr</title>
-    {% endif %}
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Trips</title>
+        {% endif %}
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="../static/css/style.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+      
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="/static/caroufredsel.js"type="text/JavaScript"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>Navbar</div>
-    {% if current_user.is_anonymous %}
+    <header>
+        <div class="container" onclick="myFunction(this)"> 
+            <div class="row">
+                <a href="" class="logo"><img src="../static/airplane.png"></a>
+                <nav>
+                    <ul>
+                        <li><a href="#slider-carousel">Home</a></li>
+                        {% if current_user.is_anonymous %}
+                        <li><a href="#intro">Popular</a></li>
+                        {% else %}
+                        <li><a href="#intro">Trips</a></li>
+                        <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
+                        {% endif %}
+                         <li><a href="#feature">Contacts</a></li> 
+                         <li><a href="#team">About Us</a></li>
+                         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="">Profile</a></li>
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
         {% endif %}
-    <hr> <!-- CRTA -->
-    {% block content %}{% endblock %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    
+    {% block content %}
+    {% endblock %}
+
+
+    
+    <footer>
+        <p>Travel-Hr Desing,Copyright &copy; 2019</p>
+        <!-- Add font awesome icons -->
+        <p>Follow Us!</p>
+        <img src="static/logofb.png">     
+        <img src="static/logoig.png"> 
+        <img src="static/logofb.png">     
+        <img src="static/logoig.png">       
+
+    </footer>
 </body>
 </html>
