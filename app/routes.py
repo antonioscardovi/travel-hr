@@ -1,12 +1,11 @@
-import secrets
-import os
-from flask import render_template, redirect, url_for, flash, request
+from flask import render_template, redirect, url_for, flash, request, send_from_directory
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
 from app import app, db
 from app.forms import LoginForm, RegistrationForm, IzletiForm, EditProfileForm
 from app.models import User, Izlet
+import os
 
 @app.route('/')
 @app.route('/index')
@@ -48,18 +47,6 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
 
-
-# funkcija za slike:
-def save_picture(form_picture):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/izlet_pics', picture_fn)
-    form_picture.save(picture_path)
-    return picture_fn
-
-
-
 @app.route('/izleti', methods=['GET', 'POST'])
 @login_required
 def izleti():
@@ -67,15 +54,16 @@ def izleti():
     if current_user.is_authenticated == False:
         return redirect(url_for('login'))
     if form.validate_on_submit():
-        if form.picture.data:
-            picture_file = save_picture(form.picture.data)
-            
+        f = request.files['picture']
+        filename=secure_filename(f.filename)
         izlet = Izlet(naziv=form.name.data, destinacija=form.location.data, cijena=form.price.data, 
-        dolazak=form.end.data, polazak=form.start.data, opis=form.description.data, user_id=current_user.id)
+        dolazak=form.end.data, polazak=form.start.data, opis=form.description.data, user_id=current_user.id, image_file=f.filename)
         db.session.add(izlet)
         db.session.commit()
+                
+        f.save(os.path.join(app.config['TRIP_UPLOAD_FOLDER'], filename))
+        
         flash('Congratulations, you posted a trip!')
-        print('Congratulations!')
         return redirect(url_for('homepage'))
     return render_template('izleti.html', title='Add Trips', form=form)
 
@@ -98,9 +86,12 @@ def profile(username):
 def trips():
     return render_template('trips.html')
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/upload', methods='POST')
-def upload():
+
+    
+    
     picture = request.files['Fotografija']
-
     return picture.filename
