@@ -50,7 +50,7 @@
 .loginbox{
   font-size: 16px;
     width: 340px;
-    height: 400px;
+    height: auto;
     background: rgba(0, 0, 0, 0.726);
     color: #fff;
     top: 50%;
@@ -101,6 +101,7 @@ h1{
 }
 .loginbox input[type="submit"]
 {
+    margin-top: 10px;
     border: none;
     outline: none;
     height: 40px;
@@ -130,10 +131,10 @@ h1{
 
 .zasignup{
   width: 340px;
-    height: 710px;
+    height: auto;
     background: rgba(0, 0, 0, 0.726);
     color: #fff;
-    top: 52%;
+    top: 69%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -141,4 +142,11 @@ h1{
     padding: 70px 30px;
     box-shadow: 0px 0px 30px rgb(30, 30, 30);
     
+}
+
+.error 
+{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
