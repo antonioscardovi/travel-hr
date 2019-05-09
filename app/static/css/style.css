@@ -80,6 +80,11 @@ header nav ul li a:hover
     background-size: 100% 100%;
 }
 
+
+
+
+
+
 .slider,.slider ul,.slider ul li
 {
     height: 710px;
@@ -105,12 +110,7 @@ header nav ul li a:hover
     margin-right: 10px;
 }
 
-.slider a.btn-half {
-    background-color: deepskyblue;
-    color: white;
-    transition: 0.5s ease-in;
 
-}
 
 .slider a.btn-full 
 {

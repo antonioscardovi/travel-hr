@@ -74,4 +74,4 @@ def homepage():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     form = EditProfileForm()
-    return render_template('profile.html', form=form)
+    return render_template('profile.html', form=form, user=user)
