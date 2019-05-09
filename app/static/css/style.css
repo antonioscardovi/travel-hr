@@ -6,7 +6,7 @@
 
 body
 {
-    height: 3000px;
+    height: auto;
 }
 
 header
@@ -81,8 +81,19 @@ header nav ul li a:hover
 }
 
 
+.btn{
+    background-color:rgb(41, 124, 63, 0.888);
+    color: white;
+}
 
-
+ul.dropdown-menu
+{
+    background-color: whitesmoke;
+    min-width: 80px;
+    border-radius: 10px;
+    
+    
+}
 
 
 .slider,.slider ul,.slider ul li
@@ -109,7 +120,6 @@ header nav ul li a:hover
     padding: 10px 40 px;
     margin-right: 10px;
 }
-
 
 
 .slider a.btn-full 
@@ -145,6 +155,19 @@ slider i
     position: relative;
     padding: 100px 0px;
     text-align: center;
+}
+
+.container .row2
+{
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.body2
+{   
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0.3)), url(/static/adventure.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 .sub-heading
@@ -661,6 +684,19 @@ input[type=text], select, textarea {
     cursor: pointer;
     width: 100%;
   }
+
+
+  .intro-block .button2 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: gray;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
   
   .team-area .container .button:hover {
     background-color: #555;
@@ -671,7 +707,7 @@ footer{
 	padding:20px;
 	margin-top: 20px;
 	color: #ffffff;
-	background-color: rgba(70, 10, 10, 0.9);
+	background-color: rgb(41, 124, 63);
 	text-align: center;
 
 }
