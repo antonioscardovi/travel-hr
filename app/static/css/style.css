@@ -63,14 +63,7 @@ transition: all 0.5s ease-in;
 
 
 
-header nav ul li a:hover
-{
-    text-decoration: none;
-   
-    color:rgb(92, 218, 125);
-    
-    text-shadow: 2px 2px 4px #000000;
-}
+
 
 
 
@@ -132,10 +125,7 @@ ul.dropdown-menu
     background-color: #276544;
 }
 
-.img2 {
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/app/static/covjek.jpg);
-    background-size: 100% 100%;
-}
+
 
 .img3
 {
@@ -645,6 +635,7 @@ input[type=text], select, textarea {
   /* Add some shadows to create a card effect */
   .team-area .container .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
   }
   
   /* Some left and right padding inside the container */
@@ -679,7 +670,8 @@ input[type=text], select, textarea {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: gray;
+    background-color: rgb(41, 124, 63); /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, rgb(41, 124, 63) , #74be87);
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -707,14 +699,15 @@ footer{
 	padding:20px;
 	margin-top: 20px;
 	color: #ffffff;
-	background-color: rgb(41, 124, 63);
+	background-color: #297c3f;
 	text-align: center;
 
 }
 
 .column .card:hover, .column .card:active
 {
-    background: #276544;
+    background: #dbdbdb;
+    color: #383838
 }
 
 
@@ -753,3 +746,19 @@ footer .fa {
       background: darkgray;
       color: white;
   }
+
+header nav ul li a:hover
+{
+    text-decoration: none;
+   
+    color:rgb(92, 218, 125);
+    
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+
+
+
+
