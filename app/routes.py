@@ -5,7 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
 from app import app, db
-from app.forms import LoginForm, RegistrationForm, IzletiForm
+from app.forms import LoginForm, RegistrationForm, IzletiForm, EditProfileForm
 from app.models import User, Izlet
 
 @app.route('/')
@@ -88,7 +88,14 @@ def homepage():
 
 @app.route('/profile/<username>')
 @login_required
-def user(username):
+def profile(username):
     user = User.query.filter_by(username=username).first_or_404()
-    
-    return render_template('profile.html', user=user)
+    form = EditProfileForm()
+    return render_template('profile.html', form=form, user=user)
+
+
+# @app.route('/upload', methods='POST')
+# def upload():
+#     picture = request.files['Fotografija']
+
+#     return picture.filename

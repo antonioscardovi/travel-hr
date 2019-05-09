@@ -37,19 +37,19 @@
                     <a href="" class="logo"><img src="/static/airplane.png"></a>
                     <nav>
                         <ul>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Trips</a></li>
+                            <li><a href="#slider-carousel">Home</a></li>
+                            <li><a href="#intro">Trips</a></li>
                             <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
-                            <li><a href="">Contacts</a></li>
-                            <li><a href="">About Us</a></li>
-                            <li><li><div class="dropdown">
+                            <li><a href="#feature">Contacts</a></li>
+                            <li><a href="#team">About Us</a></li>
+                            <li><div class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                  <li><a href="">Profile</a></li>
+                                  <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
                                   <li><a href="{{ url_for('logout') }}">Logout</a></li>
                                 </ul>
-                              </div> </li>
+                            </div>
                         
                               <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
                             </li>
@@ -139,6 +139,9 @@
 
                             
                 </div>
+
+                <a href=""><center>Show All</center></a>
+
             </div>
 
         </section>
@@ -192,10 +195,7 @@
            
         </section>
 
-    
-
-       
-
+        <!--About Us-->
         <section class="team-area" id="team">
             <div class="container">
                 <div class="row">
@@ -208,99 +208,51 @@
                             </div>
                      </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="team-man">
-                            <img src="/static/default3.jpg">
-                        </div>
-                        <div class="team-descriptions">
-                            <div class="team-title">
-                                <h3>Nike Lee</h3>
-                                <span>Project Menager</span>
-                            </div>
-                            <p>
-                             This are our best clienets who used our app and traveled along with us
-                             This are our best clienets who used our app and traveled along with us
-                             This are our best clienets who used our app and traveled along with us
-                            </p>
-                            <div class="team-social-network">
-                                <a href=""><i class="fa fa-facebook"></i></a>
-                                <a href=""><i class="fa fa-twiter"></i></a>
-                                <a href=""><i class="fa fa-linkedin"></i></a>
+            
 
-                            </div>
+                <!--About us kartice sa slikama-->
+                <div class="row">
+                    <div class="column">
+                      <div class="card">
+                        <img src="static/default1.jpg" alt="Jane" style="width:100%">
+                        <div class="container3">
+                          <h2>Jane Doe</h2>
+                          <p class="title">CEO &amp; Founder</p>
+                          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                          <p>example@example.com</p>
+                          <p><button class="button">Contact</button></p>
                         </div>
+                      </div>
+                    </div>
+                  
+                    <div class="column">
+                      <div class="card">
+                        <img src="static/default2.jpg" alt="Mike" style="width:100%">
+                        <div class="container3">
+                          <h2>Mike Ross</h2>
+                          <p class="title">Art Director</p>
+                          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                          <p>example@example.com</p>
+                          <p><button class="button">Contact</button></p>
+                        </div>
+                      </div>
+                    </div>
+                  
+                    <div class="column">
+                      <div class="card">
+                        <img src="static/default3.jpg" alt="John" style="width:100%">
+                        <div class="container3">
+                          <h2>John Doe</h2>
+                          <p class="title">Designer</p>
+                          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                          <p>example@example.com</p>
+                          <p><button class="button">Contact</button></p>
+                        </div>
+                         </div>
                     </div>
 
-                    <div class="col-sm-6 col-md-3">
-                            <div class="team-man">
-                                <img src="/static/default3.jpg">
-                            </div>
-                            <div class="team-descriptions">
-                                <div class="team-title">
-                                    <h3>Nike Lee</h3>
-                                    <span>Project Menager</span>
-                                </div>
-                                <p>
-                                 This are our best clienets who used our app and traveled along with us
-                                 This are our best clienets who used our app and traveled along with us
-                                 This are our best clienets who used our app and traveled along with us
-                                </p>
-                                <div class="team-social-network">
-                                    <a href=""><i class="fa fa-facebook"></i></a>
-                                    <a href=""><i class="fa fa-twiter"></i></a>
-                                    <a href=""><i class="fa fa-linkedin"></i></a>
-    
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-6 col-md-3">
-                                <div class="team-man">
-                                    <img src="/static/default3.jpg">
-                                </div>
-                                <div class="team-descriptions">
-                                    <div class="team-title">
-                                        <h3>Nike Lee</h3>
-                                        <span>Project Menager</span>
-                                    </div>
-                                    <p>
-                                     This are our best clienets who used our app and traveled along with us
-                                     This are our best clienets who used our app and traveled along with us
-                                     This are our best clienets who used our app and traveled along with us
-                                    </p>
-                                    <div class="team-social-network">
-                                        <a href=""><i class="fa fa-facebook"></i></a>
-                                        <a href=""><i class="fa fa-twiter"></i></a>
-                                        <a href=""><i class="fa fa-linkedin"></i></a>
-        
-                                    </div>
-                                </div>
-                            </div>
+             </div>
 
-                            <div class="col-sm-6 col-md-3">
-                                    <div class="team-man">
-                                        <img src="/static/default3.jpg">
-                                    </div>
-                                    <div class="team-descriptions">
-                                        <div class="team-title">
-                                            <h3>Nike Lee</h3>
-                                            <span>Project Menager</span>
-                                        </div>
-                                        <p>
-                                         This are our best clienets who used our app and traveled along with us
-                                         This are our best clienets who used our app and traveled along with us
-                                         This are our best clienets who used our app and traveled along with us
-                                        </p>
-                                        <div class="team-social-network">
-                                            <a href=""><i class="fa fa-facebook"></i></a>
-                                            <a href=""><i class="fa fa-twiter"></i></a>
-                                            <a href=""><i class="fa fa-linkedin"></i></a>
-            
-                                        </div>
-                                    </div>
-                                </div>
-                </div>
             </div>
         </section>
 

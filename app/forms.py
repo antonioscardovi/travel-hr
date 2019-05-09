@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, Form, TextField, TextAreaField, validators 
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from wtforms.fields.html5 import DateField
 from app.models import User
 from flask_wtf.file import FileField, FileRequired, FileAllowed
@@ -34,11 +34,19 @@ class RegistrationForm(FlaskForm):
 
 
 class IzletiForm(FlaskForm):
-    name = StringField('Ime Izleta', validators=[DataRequired()])
-    location = StringField('Destinacija', validators=[DataRequired()])
-    start = DateField('Datum Početka Izleta', format='%Y-%m-%d', validators=[DataRequired()])
-    end = DateField('Kraj izleta', format='%Y-%m-%d', validators=[DataRequired()])
-    description = TextAreaField('Opis Izleta', validators=[DataRequired()])
-    price = StringField('Cijena', validators=[DataRequired()])
-    picture = FileField('Add Picture', validators=[FileAllowed(['jpg', 'png'])])
+    name = StringField('Trip Name', validators=[DataRequired()])
+    location = StringField('Destination', validators=[DataRequired()])
+    start = DateField('Departure', format='%Y-%m-%d', validators=[DataRequired()])
+    end = DateField('End', format='%Y-%m-%d', validators=[DataRequired()])
+    description = TextAreaField('Description', validators=[DataRequired()])
+    price = StringField('Price', validators=[DataRequired()])
+    picture = FileField('Fotografija', validators=[FileRequired()])
+    submit = SubmitField('Submit')
+
+
+class EditProfileForm(FlaskForm):
+    username = StringField('Change Username', validators=[DataRequired()])
+    email = StringField('Change Email')
+    about = TextAreaField('About Me', validators=[Length(min=0, max=140)])
+    picture = FileField('Profile Picture')
     submit = SubmitField('Submit')

@@ -72,11 +72,18 @@ header nav ul li a:hover
     text-shadow: 2px 2px 4px #000000;
 }
 
+
+
 .img1 
 {
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/static/cloudy.jpg);
     background-size: 100% 100%;
 }
+
+
+
+
+
 
 .slider,.slider ul,.slider ul li
 {
@@ -103,12 +110,7 @@ header nav ul li a:hover
     margin-right: 10px;
 }
 
-.slider a.btn-half {
-    background-color: deepskyblue;
-    color: white;
-    transition: 0.5s ease-in;
 
-}
 
 .slider a.btn-full 
 {
@@ -600,50 +602,6 @@ input[type=text], select, textarea {
 }
 
 
-footer{
-	padding:20px;
-	margin-top: 20px;
-	color: #ffffff;
-	background-color: rgba(70, 10, 10, 0.9);
-	text-align: center;
-
-}
-
-
-/* Style all font awesome icons */
-footer .fa {
-    padding: right;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  /* Add a hover effect if you want */
-  footer .fa:hover {
-    opacity: 0.7;
-  }
-  
-  /* Set a specific color for each brand */
-  
-  /* Facebook */
-  footer .fa-facebook {
-    background: darkgray;
-    color: white;
-  }
-  
-  /* Twitter */
- footer .fa-twitter {
-    background: darkgray;
-    color: white;
-  }
-
-  footer .fa-instagram
-  {
-      background: darkgray;
-      color: white;
-  }
-
 
   /* Three columns side by side */
 .team-area .container .column {
@@ -708,3 +666,54 @@ footer .fa {
     background-color: #555;
   }
  
+  
+footer{
+	padding:20px;
+	margin-top: 20px;
+	color: #ffffff;
+	background-color: rgba(70, 10, 10, 0.9);
+	text-align: center;
+
+}
+
+.column .card:hover, .column .card:active
+{
+    background: #276544;
+}
+
+
+
+
+/* Style all font awesome icons */
+footer .fa {
+    padding: right;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Add a hover effect if you want */
+  footer .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  footer .fa-facebook {
+    background: darkgray;
+    color: white;
+  }
+  
+  /* Twitter */
+ footer .fa-twitter {
+    background: darkgray;
+    color: white;
+  }
+
+  footer .fa-instagram
+  {
+      background: darkgray;
+      color: white;
+  }
