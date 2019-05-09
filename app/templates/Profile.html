@@ -3,7 +3,11 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Add Trip</title>
+    {% endif %}
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -26,5 +30,34 @@
 </head>
 <body>
     
+      <div class="profilebox">
+
+          <img src="{{ current_user.image_file }}" class="avatar">
+            <p>{{ current_user.name }}</p>          
+            <p>{{ current_user.surname }}</p>          
+            <p>{{ current_user.username }}</p>          
+            <p>{{ current_user.email }}</p>    
+            
+            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+
+            <!-- SVI NJEGOVI TRIPOVI -->
+
+            <h1 style="font-family:Lobster;font-size: 30px">Edit Profile</h1>
+            <form action="" method="post" novalidate>
+                {{ form.hidden_tag() }}
+
+                <div class="forme">
+                    {{ form.username.label(class="label") }}
+                    {{ form.username(size=32, class="input", placeholder="Enter Username") }}
+                    {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+                </div>
+                
+                {{ form.submit() }}
+                
+            </form>
+            
+        </div>
 </body>
 </html>

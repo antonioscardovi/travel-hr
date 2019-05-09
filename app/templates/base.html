@@ -11,13 +11,53 @@
     {% endif %}
 </head>
 <body>
-    <div>Navbar</div>
-    {% if current_user.is_anonymous %}
+    <header>
+        <div class="container" onclick="myFunction(this)"> 
+            <div class="row">
+                <a href="" class="logo"><img src="../static/airplane.png"></a>
+                <nav>
+                    <ul>
+                        <li><a href="#slider-carousel">Home</a></li>
+                        {% if current_user.is_anonymous %}
+                        <li><a href="#intro">Popular</a></li>
+                        {% else %}
+                        <li><a href="#intro">Trips</a></li>
+                        <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
+                        {% endif %}
+                         <li><a href="#feature">Contacts</a></li> 
+                         <li><a href="#team">About Us</a></li>
+                         {% if current_user.is_anonymous %}
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
-        <a href="{{ url_for('logout') }}">Logout</a>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="">Profile</a></li>
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
         {% endif %}
-    <hr> <!-- CRTA -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    
     {% block content %}{% endblock %}
+
+
+    
+    <footer>
+        <p>Travel-Hr Desing,Copyright &copy; 2019</p>
+        <!-- Add font awesome icons -->
+        <p>Follow Us!</p>
+        <img src="static/logofb.png">     
+        <img src="static/logoig.png"> 
+        <img src="static/logofb.png">     
+        <img src="static/logoig.png">       
+
+    </footer>
 </body>
 </html>
