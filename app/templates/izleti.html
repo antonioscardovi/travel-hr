@@ -19,7 +19,7 @@
     <div class="izletibox addtrip">
             <img src="static/malii.png" class="avatar2">
         <h1 style="font-family: Lobster;font-size: 35px" class="tracking-in-expand-fwd">Add new <span style ="color:rgb(41, 124, 63)">trip</span></h1>
-<form action="" method="post" novalidate>
+<form action="" method="post" enctype="multipart/form-data" novalidate>
     {{ form.hidden_tag() }}
 
         <div class="forme">
@@ -64,7 +64,7 @@
 
         <div class="forme">
             {{ form.price.label(class="label", placeholder="Price (€)") }}
-            {{ form.name(size=32, class="input", placeholder="Trip costs...") }}
+            {{ form.price(size=32, class="input", placeholder="Trip costs...") }}
             
             {% for error in form.price.errors %}
                 <span style="color: red;display: block; margin-bottom: 30px;">[{{ error }}]</span>
@@ -72,30 +72,14 @@
         </div>
 
          <div class="forme">
-             <form method="POST" action="/upload" enctype="multipart/form-data">
             {{ form.picture.label(class="label") }}
             {{ form.picture(class="input") }}
             {% for error in form.picture.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
             {{ form.submit() }}
-             </form>
              <a href="{{ url_for('index') }}"><center>Back to home</center></a>
         </div> 
-
-        <div class="forme">
-            {{ form.picture.label() }}
-            {{ form.picture(class="input") }}
-            {% if form.picture.errors %}
-                {% for error in form.picture.errors %}
-                    <span style="color: red;">[{{ error }}]</span>
-                {% endfor %} <br>
-            {% endif %}
-        </div>
-
-
-
-        {{ form.submit() }}
 
     </form>
     </div>
