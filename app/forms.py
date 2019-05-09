@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField, Form,
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from wtforms.fields.html5 import DateField
 from app.models import User
-from flask_wtf.file import FileField, FileRequired
+from flask_wtf.file import FileField, FileRequired, FileAllowed
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
