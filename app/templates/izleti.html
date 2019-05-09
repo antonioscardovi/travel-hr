@@ -13,14 +13,18 @@
     <link rel="stylesheet" href="static/css/mojcss.css">
 </head>
 <body>
+        <video autoplay muted loop id="myVideo">
+                <source src="static/veca.mp4" type="video/mp4">        
+              </video>
     <div class="izletibox addtrip">
-        <h1>Add new trip</h1>
-<form action="" method="post" novalidate enctype="multipart/form-data">
+            <img src="static/malii.png" class="avatar2">
+        <h1 style="font-family: Lobster;font-size: 35px" class="tracking-in-expand-fwd">Add new <span style ="color:rgb(41, 124, 63)">trip</span></h1>
+<form action="" method="post" novalidate>
     {{ form.hidden_tag() }}
 
         <div class="forme">
         {{ form.name.label(class="label") }}
-        {{ form.name(size=32, class="input", placeholder="Trip name") }}
+        {{ form.name(size=32, class="input", placeholder="Trip name...") }}
         {% for error in form.name.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
@@ -51,8 +55,8 @@
         </div>
 
         <div class="forme">
-            {{ form.description.label(class="label", placeholder="Trip info...") }}
-            {{ form.description(class="input") }}
+            <div>{{ form.description.label(class="label", placeholder="Trip info...") }}</div>
+            <div class="sirina">{{ form.description(class="input") }}</div>
             {% for error in form.description.errors %}
                 <span style="color: red;">[{{ error }}]</span>
                 {% endfor %}
@@ -60,9 +64,10 @@
 
         <div class="forme">
             {{ form.price.label(class="label", placeholder="Price (€)") }}
-            {{ form.price(class="input") }}
+            {{ form.name(size=32, class="input", placeholder="Trip costs...") }}
+            
             {% for error in form.price.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;display: block; margin-bottom: 30px;">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -75,6 +80,7 @@
                 {% endfor %}
             {{ form.submit() }}
              </form>
+             <a href="{{ url_for('index') }}"><center>Back to home</center></a>
         </div> 
 
         <div class="forme">
