@@ -43,14 +43,14 @@
                             <li><a href="#feature">Contacts</a></li>
                             <li><a href="#team">About Us</a></li>
                             <li><div class="dropdown">
-                                <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                                <button style="font-style: bold !important" class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
                                 <span class="caret"></span></button>
-                                <ul class="dropdown-menu">
+                                <ul style="line-height:1rem; text-align: center;" class="dropdown-menu">
                                   <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
                                   <li><a href="{{ url_for('logout') }}">Logout</a></li>
                                 </ul>
                             </div>
-                        
+                         
                               <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
                             </li>
                             
