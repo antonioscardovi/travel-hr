@@ -37,11 +37,22 @@
                     <a href="" class="logo"><img src="../static/airplane.png"></a>
                     <nav>
                         <ul>
-                            <li><a href="#slider-carousel">Home</a></li> 
-                            <li><a href="#intro">Popular</a></li> 
-                             <li><a href="#feature">Contacts</a></li> 
-                             <li><a href="#team">About Us</a></li> 
-                             <li><a href="{{ url_for('login') }}" style="color: rgb(92, 218, 125);" >Login</a></li> 
+                            <li><a href="{{ url_for('homepage') }} ">Home</a></li> 
+                            <li><a href="{{ url_for('homepage') }}#intro">Popular</a></li> 
+                             <li><a href="{{ url_for('homepage') }}#feature">Contacts</a></li> 
+                             <li><a href="{{ url_for('homepage') }}#team">About Us</a></li> 
+                             <li><a style="color: rgb(41, 192, 81)" href="{{ url_for('izleti') }}">Add Trip</a></li>
+                             <li><div class="dropdown">
+                                <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
+                                  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                                </ul>
+                            </div>
+                        
+                              <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -54,7 +65,7 @@
             <div class="container">
                 <div class="row row2">
                     <div class="col-sm-12 text-center"><br>
-                        <h2 style="font-family:lobster; font-size:50px;">Popular <span>Places</span></h2> 
+                        <h2 style="font-family:lobster; font-size:50px;">Popular <span style="color:rgb(41, 124, 63)">Places</span></h2> 
                         <div class="sub-heading">
                             <p style="font-size: 16px;">
                                <br> Here you can see some of our latest trips.<br>    
