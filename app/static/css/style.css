@@ -378,7 +378,9 @@ input[type=text], select, textarea {
     padding: 20px;
   }
 
-
+.dropdown .bgzelena:hover {
+    background-color: #45a049 !important;
+}
 
  
 
