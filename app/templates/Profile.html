@@ -27,20 +27,20 @@
 
 <body>
     <header>
-        <div class="container">
+        <div class="container" onclick="myFunction(this)"> 
             <div class="row">
-                <a href="" class="logo"><img src="/static/airplane.png"></a>
+                <a href="" class="logo"><img src="../static/airplane.png"></a>
                 <nav>
                     <ul>
-                        <li><a href="#slider-carousel">Home</a></li>
-                        <li><a href="#intro">Trips</a></li>
-                        <li><a href="{{ url_for('izleti') }}">Add Trip</a></li>
-                        <li><a href="#feature">Contacts</a></li>
-                        <li><a href="#team">About Us</a></li>
-                        <li><div class="dropdown">
-                            <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                        <li><a href="{{ url_for('homepage') }} ">Home</a></li> 
+                        <li><a href="{{ url_for('homepage') }}#intro">Popular</a></li> 
+                         <li><a href="{{ url_for('homepage') }}#feature">Contacts</a></li> 
+                         <li><a href="{{ url_for('homepage') }}#team">About Us</a></li> 
+                         <li><a style="color: rgb(41, 192, 81)" href="{{ url_for('izleti') }}">Add Trip</a></li>
+                         <li><div class="dropdown">
+                            <button class="btn btn dropdown-toggle bgzelena" type="button" data-toggle="dropdown">{{ current_user.username }}
                             <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
+                            <ul style="line-height:1rem; text-align: center;" class="dropdown-menu">
                               <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
                               <li><a href="{{ url_for('logout') }}">Logout</a></li>
                             </ul>
@@ -48,7 +48,6 @@
                     
                           <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
                         </li>
-                        
                     </ul>
                 </nav>
             </div>
