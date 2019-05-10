@@ -104,6 +104,7 @@
                        <p>
                                {{ izlet1.opis }}
                        </p>
+                       <p><a href="{{ url_for('detalji', tripid=izlet1.id_izlet) }}"><button class="button2">Show More</button></a></p>
                     </div>
                 </div>
             
@@ -118,6 +119,7 @@
                    <p>
                            {{ izlet2.opis }}
                    </p>
+                   <p><a href="{{ url_for('detalji', tripid=izlet2.id_izlet) }}"><button class="button2">Show More</button></a></p>
                 </div>
             </div>
 
@@ -132,6 +134,7 @@
                    <p>
                            {{ izlet3.opis }}
                    </p>
+                   <p><a href="{{ url_for('detalji', tripid=izlet3.id_izlet) }}"><button class="button2">Show More</button></a></p>
                 </div>
             </div> 
 
@@ -139,7 +142,7 @@
                 </div>
 
               
-                
+                <a href="{{ url_for('izleti') }}"><button style="margin-top: 50px">Show All</button></a>
                 
                 
 
