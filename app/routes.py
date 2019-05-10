@@ -89,9 +89,11 @@ def trips():
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
-    
     
     picture = request.files['Fotografija']
     return picture.filename
+
+@app.route('/detalji')
+@login_required
+def details():
+    return render_template('detalji.html')
