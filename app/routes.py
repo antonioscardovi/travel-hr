@@ -96,11 +96,11 @@ def trips():
     izlet = Izlet.query.all()
     return render_template('trips.html', izlet=izlet)
 
-@app.route('/trip/<tripid>')
-def trip(tripid):
-    izletid = Izlet.id_izlet
-    izlet = Izlet.query.filter_by(tripid=izletid).first_or_404()
-    return render_template('trip.html', izlet=izlet)
+@app.route('/detalji/<tripid>')
+@login_required
+def detalji(tripid):
+    izlet = Izlet.query.filter_by(id_izlet=tripid).first_or_404()
+    return render_template('detalji.html', izlet=izlet)
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -109,7 +109,3 @@ def allowed_file(filename):
     picture = request.files['Fotografija']
     return picture.filename
 
-@app.route('/detalji')
-@login_required
-def details():
-    return render_template('detalji.html')
