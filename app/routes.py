@@ -10,7 +10,12 @@ import os
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='Travel.hr - Homepage')
+    izleti = Izlet.query.all()
+    izlet1 = Izlet.query.filter_by(id_izlet=1).first()
+    izlet2 = Izlet.query.filter_by(id_izlet=2).first()
+    izlet3 = Izlet.query.filter_by(id_izlet=3).first()
+    slika1 = izlet1.image_file
+    return render_template('index.html', title='Travel.hr - Homepage', izleti=izleti, izlet1=izlet1, izlet2=izlet2, izlet3=izlet3, slika1=slika1)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -71,7 +76,10 @@ def izleti():
 @app.route('/homepage')
 @login_required
 def homepage():
-    return render_template('homepage.html', title='Homepage')
+    izlet1 = Izlet.query.filter_by(id_izlet=1).first()
+    izlet2 = Izlet.query.filter_by(id_izlet=2).first()
+    izlet3 = Izlet.query.filter_by(id_izlet=3).first()
+    return render_template('homepage.html', title='Homepage', izlet1=izlet1, izlet2=izlet2, izlet3=izlet3)
 
 
 @app.route('/profile/<username>')
@@ -83,8 +91,16 @@ def profile(username):
 
 
 @app.route('/trips')
+@login_required
 def trips():
-    return render_template('trips.html')
+    izlet = Izlet.query.all()
+    return render_template('trips.html', izlet=izlet)
+
+@app.route('/trip/<tripid>')
+def trip(tripid):
+    izletid = Izlet.id_izlet
+    izlet = Izlet.query.filter_by(tripid=izletid).first_or_404()
+    return render_template('trip.html', izlet=izlet)
 
 def allowed_file(filename):
     return '.' in filename and \
