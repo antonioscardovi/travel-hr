@@ -6,7 +6,7 @@
 
 body
 {
-    height: 3000px;
+    height: auto;
 }
 
 header
@@ -63,14 +63,7 @@ transition: all 0.5s ease-in;
 
 
 
-header nav ul li a:hover
-{
-    text-decoration: none;
-   
-    color:rgb(92, 218, 125);
-    
-    text-shadow: 2px 2px 4px #000000;
-}
+
 
 
 
@@ -81,8 +74,19 @@ header nav ul li a:hover
 }
 
 
+.btn{
+    background-color:rgb(41, 124, 63, 0.888);
+    color: white;
+}
 
-
+ul.dropdown-menu
+{
+    background-color: whitesmoke;
+    min-width: 80px;
+    border-radius: 10px;
+    
+    
+}
 
 
 .slider,.slider ul,.slider ul li
@@ -111,7 +115,6 @@ header nav ul li a:hover
 }
 
 
-
 .slider a.btn-full 
 {
     background-color: rgb(41, 124, 63); 
@@ -122,10 +125,7 @@ header nav ul li a:hover
     background-color: #276544;
 }
 
-.img2 {
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(/app/static/covjek.jpg);
-    background-size: 100% 100%;
-}
+
 
 .img3
 {
@@ -145,6 +145,19 @@ slider i
     position: relative;
     padding: 100px 0px;
     text-align: center;
+}
+
+.container .row2
+{
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
+.body2
+{   
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0.3)), url(/static/adventure.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
 }
 
 .sub-heading
@@ -202,17 +215,24 @@ slider i
 }
 
 .intro-block
-{
+{   
+    
     position: relative;
     background-color: #f7f7f7;
     margin: 50px 0px 0px;
     text-align: center;
     padding: 70px 25px 40px;
+    opacity: 0.9;
  
 
 }
 
-
+.intro-block .slike
+{
+    
+    width: 243.328px;
+    height: 162.734px;
+}
 
 .intro-block img
 {
@@ -622,6 +642,7 @@ input[type=text], select, textarea {
   /* Add some shadows to create a card effect */
   .team-area .container .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
   }
   
   /* Some left and right padding inside the container */
@@ -656,6 +677,20 @@ input[type=text], select, textarea {
     display: inline-block;
     padding: 8px;
     color: white;
+    background-color: rgb(41, 124, 63); /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right, rgb(41, 124, 63) , #74be87);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+
+  .intro-block .button2 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
     background-color: gray;
     text-align: center;
     cursor: pointer;
@@ -671,17 +706,50 @@ footer{
 	padding:20px;
 	margin-top: 20px;
 	color: #ffffff;
-	background-color: rgba(70, 10, 10, 0.9);
+	background-color: #297c3f;
 	text-align: center;
 
 }
 
 .column .card:hover, .column .card:active
 {
-    background: #276544;
+    background: #dbdbdb;
+    color: #383838
 }
 
 
+/* Ovo je show more button za trips */
+.intro-area .container .button
+{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #555;
+    text-align: center;
+    cursor: pointer;
+    width: 31.6%;
+}
+
+.intro-area .container .button3
+{
+    
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: rgb(41, 124, 63);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.intro-area .container .button3:hover
+{
+    background-color: brown;
+}
 
 
 /* Style all font awesome icons */
@@ -717,3 +785,19 @@ footer .fa {
       background: darkgray;
       color: white;
   }
+
+header nav ul li a:hover
+{
+    text-decoration: none;
+   
+    color:rgb(92, 218, 125);
+    
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+
+
+
+

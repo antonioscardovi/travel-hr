@@ -26,7 +26,7 @@
         {{ form.name.label(class="label") }}
         {{ form.name(size=32, class="input", placeholder="Trip name...") }}
         {% for error in form.name.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -34,7 +34,7 @@
             {{ form.location.label(class="label") }}
             {{ form.location(size=32, class="input", placeholder="Trip location") }}
             {% for error in form.location.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -42,7 +42,7 @@
             {{ form.start.label(class="label") }}
             {{ form.start(class="input") }}
             {% for error in form.start.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
         
@@ -50,7 +50,7 @@
             {{ form.end.label(class="label") }}
             {{ form.end(class="input") }}
             {% for error in form.end.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -58,7 +58,7 @@
             <div>{{ form.description.label(class="label", placeholder="Trip info...") }}</div>
             <div class="sirina">{{ form.description(class="input") }}</div>
             {% for error in form.description.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -67,7 +67,7 @@
             {{ form.price(size=32, class="input", placeholder="Trip costs...") }}
             
             {% for error in form.price.errors %}
-                <span style="color: red;display: block; margin-bottom: 30px;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
         </div>
 
@@ -75,7 +75,7 @@
             {{ form.picture.label(class="label") }}
             {{ form.picture(class="input") }}
             {% for error in form.picture.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;font-size: 12px">[{{ error }}]</span>
                 {% endfor %}
             {{ form.submit() }}
              <a href="{{ url_for('index') }}"><center>Back to home</center></a>
