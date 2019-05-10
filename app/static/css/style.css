@@ -691,10 +691,15 @@ input[type=text], select, textarea {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: gray;
+    background-image: linear-gradient(to right, rgb(41, 124, 63) , #74be87);
     text-align: center;
     cursor: pointer;
     width: 100%;
+  }
+
+  .intro-block .button2:hover
+  {
+      background-color: brown;
   }
   
   .team-area .container .button:hover {
@@ -740,7 +745,7 @@ footer{
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: rgb(41, 124, 63);
+    background-image: linear-gradient(to right, rgb(41, 124, 63) , #74be87);
     text-align: center;
     cursor: pointer;
     width: 100%;
