@@ -37,11 +37,22 @@
                     <a href="" class="logo"><img src="../static/airplane.png"></a>
                     <nav>
                         <ul>
-                            <li><a href="#slider-carousel">Home</a></li> 
-                            <li><a href="#intro">Popular</a></li> 
-                             <li><a href="#feature">Contacts</a></li> 
-                             <li><a href="#team">About Us</a></li> 
-                             <li><a href="{{ url_for('login') }}" style="color: rgb(92, 218, 125);" >Login</a></li> 
+                            <li><a href="{{ url_for('homepage') }} ">Home</a></li> 
+                            <li><a href="{{ url_for('homepage') }}#intro">Popular</a></li> 
+                             <li><a href="{{ url_for('homepage') }}#feature">Contacts</a></li> 
+                             <li><a href="{{ url_for('homepage') }}#team">About Us</a></li> 
+                             <li><a style="color: rgb(41, 192, 81)" href="{{ url_for('izleti') }}">Add Trip</a></li>
+                             <li><div class="dropdown">
+                                <button class="btn btn dropdown-toggle" type="button" data-toggle="dropdown">{{ current_user.username }}
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="{{ url_for('profile', username=current_user.username) }}">Profile</a></li>
+                                  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                                </ul>
+                            </div>
+                        
+                              <!-- <a href="{{ url_for('logout') }}">{{ current_user.username }}</a> -->
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -54,7 +65,7 @@
             <div class="container">
                 <div class="row row2">
                     <div class="col-sm-12 text-center"><br>
-                        <h2 style="font-family:lobster; font-size:50px;">Popular <span>Places</span></h2> 
+                        <h2 style="font-family:lobster; font-size:50px;">Popular <span style="color:rgb(41, 124, 63)">Places</span></h2> 
                         <div class="sub-heading">
                             <p style="font-size: 16px;">
                                <br> Here you can see some of our latest trips.<br>    
@@ -67,146 +78,26 @@
 
                 <div class="row">
                         
-                         <div class="col-sm-4">
 
+                    {% for izlet in izlet %}
+                    <div class="col-sm-4">
                                 <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                   <img src="/static/zdr1.jpg">
+                                   <img src="/static/izlet_pics/{{ izlet.image_file }}">
                                    <i class="fa fa-star"></i></span>
                                    <i class="fa fa-star"></i></span>
                                    <i class="fa fa-star"></i></span>
-                                   <h3>Zadar</h3>
+                                   <h3>{{ izlet.destinacija }}</h3>
                                    <p>
-                                        Pogledajte najvažnije znamenitosti i skrivene kutke Zadra.
-                                    Dozivite jedinstveni zvuk morskih orgulja i prekrasan zalazak sunca.
+                                        {{ izlet.opis }}
                                    </p>
-                                   <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
+                                   <p><a href="{{ url_for('detalji', tripid=izlet.id_izlet) }}"><button class="button2">Show More</button></a></p>
                                 </div>
                             </div>
+                    {% endfor %}
+                         
                         
                             
-                         <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                               <img src="/static/split.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Split</h3>
-                               <p>
-                                    Obiđite Dioklecijanovu palaču sagrađenu prije 1.700 godina;
-                                    Upoznajte znamenitosti grada Splita koje vodi profesionalni vodič.
-
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
                         
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/dubrovnik.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Dubrovnik</h3>
-                               <p>
-                                    Pridružite nam se na pješačkoj turneji Game of Thrones u Dubrovniku i otkrijte tajne Kraljevskog slijetanja.
-                                     Istražite dijelove Starog grada.
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                    <img src="/static/Pag.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Pag</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/Korcula.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Korcula</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/Rovinj.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Rovinj</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/Hvar.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Hvar</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/Trogir.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Trogir</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4">
-                            <div class="intro-block" style="box-shadow: 1px 1px 18px #888888;">
-                                <img src="/static/Umag.jpg">
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <i class="fa fa-star"></i></span>
-                               <h3>Umag</h3>
-                               <p>
-                                       Lorem Ipsum is simply dummy text of the printing and typesetings 
-                                       industry.Lorem Ipsum hes been idustry's standard dummy
-                               </p>
-                               <p><a href="https://happytovisit.com/hr/Zadar/Zadar-Walking-Tour/tour-t5621-c38"><button class="button2">Show More</button></a></p>
-                            </div>
-                        </div>
 
                             
                 </div>
