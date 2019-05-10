@@ -109,3 +109,8 @@ def allowed_file(filename):
     picture = request.files['Fotografija']
     return picture.filename
 
+# @app.route('/profilUser')
+# @login_required
+# def profilUser(username):
+#     user = User.query.filter_by(username=username).first_or_404()
+#     return render_template('profileUser.html', user=user)
